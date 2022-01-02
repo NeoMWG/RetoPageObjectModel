@@ -121,6 +121,8 @@ hs_err_pid*
 ### Gradle ###
 .gradle
 build/
+.settings/
+bin/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -142,4 +144,3 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-.settings
