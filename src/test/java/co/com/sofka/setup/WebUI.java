@@ -1,7 +1,11 @@
 package co.com.sofka.setup;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static co.com.sofka.util.Log4jValues.LOG4J_PROPERTIES_FILE_PATH;
+import static io.cucumber.messages.internal.com.google.common.base.StandardSystemProperty.USER_DIR;
 
 public class WebUI {
 
@@ -22,13 +26,16 @@ public class WebUI {
 
             driver = new ChromeDriver();
             driver.get(TEST_DESPEGAR_URL);
+
         }
 
         protected void generalSetup(){
 
+            setUplog4j();
             setUpWebdriver();
             setUpWebdriverUrl();
             maximizeWindow();
+
         }
 
         private void maximizeWindow(){
@@ -41,5 +48,11 @@ public class WebUI {
            driver.quit();
 
         }
+
+        private void setUplog4j(){
+            PropertyConfigurator.configure(USER_DIR.value() + LOG4J_PROPERTIES_FILE_PATH.getValue());
+        }
+
+
 
     }

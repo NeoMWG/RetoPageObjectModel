@@ -5,6 +5,7 @@ import co.com.sofka.util.Routes;
 
 public class DespegarSearchFligthModel {
 
+    //ATTRIBUTES
     private String origin;
     private String destination;
     private String departureDay;
@@ -18,6 +19,7 @@ public class DespegarSearchFligthModel {
     private Routes routes;
     private ClassSelector classSelect;
 
+    //ACCESS INDICATORS
     public String getOrigin() {
         return origin;
     }
